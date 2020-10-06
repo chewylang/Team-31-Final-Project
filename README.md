@@ -1,5 +1,5 @@
 # Team 31 - DS Final Project
-Completed by
+
 * Matthew Lang
 * Marcus Gershenberg
 * Jiaqi Xiao
