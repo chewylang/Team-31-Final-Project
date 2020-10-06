@@ -1,4 +1,10 @@
 # Team 31 - DS Final Project
+Completed by
+* Matthew Lang
+* Marcus Gershenberg
+* Jiaqi Xiao
+* Alex Nikas
+
 ## Milestones 
 * ~~Mon 9/28, Draft data model, with CREATE TABLE statements~~
 
