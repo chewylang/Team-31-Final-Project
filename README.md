@@ -1,4 +1,5 @@
-# Milestones for DS
+# Team 31 - DS Final Project
+## Milestones 
 * ~~Mon 9/28, Draft data model, with CREATE TABLE statements~~
 
 * ~~Mon 9/28, Sketches of application look and flow~~
