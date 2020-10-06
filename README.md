@@ -1,11 +1,11 @@
 # Milestones for DS
-* ~~Mon 9/28, Draft data model, with CREATE TABLE statements
+* ~~Mon 9/28, Draft data model, with CREATE TABLE statements~~
 
-* ~~Mon 9/28, Sketches of application look and flow
+* ~~Mon 9/28, Sketches of application look and flow~~
 
-* ~~Wed 9/30, "Final" data model, ER diagrams, SQL file; possibly tested in MySQL
+* ~~Wed 9/30, "Final" data model, ER diagrams, SQL file; possibly tested in MySQL~~
 
-### ~~Fri, 10/2 DUE: Data Milestone
+### ~~Fri, 10/2 DUE: Data Milestone~~
 
 * Mon 10/5, General HTML template; at least one page wireframed in HTML
 
