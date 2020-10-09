@@ -1,4 +1,4 @@
-MYSQL_DATABASE=******************
-MYSQL_HOST=******************
-MYSQL_USER=******************
-MYSQL_PASSWORD=******************
+MYSQL_DATABASE=team31db
+MYSQL_HOST=team31db.celau1okhiti.us-east-1.rds.amazonaws.com
+MYSQL_USER=admin31
+MYSQL_PASSWORD=$Zn=r^8HXSp5tHsw

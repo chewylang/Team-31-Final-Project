@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css">
     <title>OCFR - Home</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="home.html">OCFR Directory</a>
+      <a class="navbar-brand" href="home.html">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,19 +26,61 @@
       </div>
     </nav>
 
+      <img src="img/OCFR.png" class="img-fluid" alt="OCFR Banner">
+
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm">
-          One of three column
+          <div class="row" id="final31">
+            <div class="col cardPane cardPaneLeft">
+            <div class="col">
+              <br>
+              <h1>Members</h1>
+              <div class="member-text">
+                <br><br>
+                View, edit, and add OCFR member information.
+              </div>
+              <a href="members.html">
+                <br><br>
+              <button type="button" class="btn btn-danger btn-lg rounded-pill">Go to Members</button></a>
+            </div>
+            </div>
+
+            <div class="col cardPane cardPaneCenter">
+            <div class="col">
+                <br>
+                <h1>Reports</h1>
+                <div class="report-text">
+                  <br><br>
+                  View a list of members with expired certifications.
+                  <br><br>
+                  View a report of all members' names by station and radio number.
+                </div>
+                <a href="Reports.html">
+                  <br><br>
+                <button type="button" class="btn btn-danger btn-lg rounded-pill">Go to Reports</button></a>
+                <br><br>
+              </div>
+            </div>
+
+            <div class="col cardPane cardPaneRight">
+              <div class="col">
+                <br>
+                <h1>Certifications</h1>
+                <div class="cert-text">
+                  <br><br>
+                  View certification records, details, and members with certain certifications.
+                </div>
+                <a href="certifications.html">
+                  <br><br>
+                <button type="button" class="btn btn-danger btn-lg rounded-pill">Go to Certifications</button></a>
+              </div>
+            </div>
         </div>
-        <div class="col-sm">
-          One of three columns
+
+        <div class="footer">
+          This project was completed by Team 31: Matthew Lang, Jiaqi Xiao, Marcus Gershenberg, and Alex Nikas for the Data and Systems Module.<p><p>
+          MSIS Program 2020 @ Kelley School of Business at Indiana University
         </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-      </div>
-    </div>
+
 
 
     <!-- Optional JavaScript -->
