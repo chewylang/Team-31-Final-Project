@@ -14,13 +14,13 @@
 
 ### ~~Fri, 10/2 DUE: Data Milestone~~
 
-* Mon 10/5, General HTML template; at least one page wireframed in HTML
+* ~~Mon 10/5, General HTML template; at least one page wireframed in HTML~~
 
-* Wed 10/7, Start on VueJS and PHP APIs for at least one page
+* Wed 10/7, Start on VueJS and PHP APIs for at least one page (started, not committed yet)
 
 * Wed, 10/7, Three pages wireframed in HTML
 
-* Fri 10/9, MySQL server created in AWS, populated
+* ~~Fri 10/9, MySQL server created in AWS, populated~~
 
 ### Fri, 10/9 DUE: HTML Milestone 
 
