@@ -1,0 +1,14 @@
+{
+    "name": "chewylang/team-31-final-project",
+    "description": "Final Project for DS Module",
+    "license": "private",
+    "authors": [{
+        "name": "Team 31"
+    }],
+    "require": {
+      "ramsey/uuid": "^4.1"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
