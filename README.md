@@ -24,9 +24,9 @@
 
 ~~### Fri, 10/9 DUE: HTML Milestone~~
 
-~~* Mon, 10/12 Several APIs implemented (PHP/JSON); begin integrating into page with VueJS~~
+* ~~Mon, 10/12 Several APIs implemented (PHP/JSON); begin integrating into page with VueJS~~
 
-~~### Fri, 10/16 DUE: PHP/API Milestone (all APIs implemented in PHP)~~
+### ~~Fri, 10/16 DUE: PHP/API Milestone (all APIs implemented in PHP)~~
 
 * Fri, 10/16 VueJS consumes APIs for at least one VueJS app
 
