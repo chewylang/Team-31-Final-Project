@@ -22,7 +22,7 @@
 
 * ~~Fri 10/9, MySQL server created in AWS, populated~~
 
-~~### Fri, 10/9 DUE: HTML Milestone~~
+### ~~Fri, 10/9 DUE: HTML Milestone~~
 
 * ~~Mon, 10/12 Several APIs implemented (PHP/JSON); begin integrating into page with VueJS~~
 
