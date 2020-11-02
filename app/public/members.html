@@ -14,13 +14,13 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="home.html">Members</a>
+      <a class="navbar-brand" href="members.html">Members</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link active" href="members.html">Members <span class="sr-only">(current)</span></a>
           <a class="nav-link" href="reports.html">Reports</a>
           <a class="nav-link" href="certifications.html">Certifications</a>
@@ -75,7 +75,7 @@
           <input id="state" v-model="newMember.addressState" type="text"  placeholder="State" class="form-control">
           <input id="zip" v-model="newMember.adressZip" type="text"  placeholder="Zipcode" class="form-control">
           <input id="radio" v-model="newMember.radioNum" type="text"  placeholder="Radio Number" class="form-control">
-          <input id="station" v-model="newMember.station" type="text"  placeholder="Station Number" class="form-control">
+          <input id="station" v-model="newMember.station" type="number"  placeholder="Station Number" class="form-control">
           <input id="email" v-model="newMember.email" type="text"  placeholder="Email" class="form-control">
           <input id="phone" v-model="newMember.phone" type="text"  placeholder="Phone Number" class="form-control">
         </div>
