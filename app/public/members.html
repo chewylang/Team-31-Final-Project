@@ -7,8 +7,9 @@
 
     <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>OCFR - Members</title>
   </head>
   <body>
@@ -32,15 +33,68 @@
       <div class="header-text">
       View, edit, and add OCFR member information.
     </div>
-
+<br>
+    <div id="getMember">
+      <table id="bookTable" class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zipcode</th>
+            <th>Radio Number</th>
+            <th>Delete Member</th>
+          </tr>
+        </thead>
+        <tbody id="memberTableBody" class="member" v-for="members in member">
+          <tr>
+            <td>{{ members.firstname }}</td>
+            <td>{{ members.lastname }}</td>
+            <td>{{ members.gender }}</td>
+            <td>{{ members.addressStreet }}</td>
+            <td>{{ members.addressCity }}</td>
+            <td>{{ members.addressState }}</td>
+            <td>{{ members.adressZip }}</td>
+            <td>{{ members.radioNum }}</td>
+            <td><a v-bind:href = "'api/deleteMem.php?firstname=' + members.firstname + '&lastname=' + members.lastname">Delete</a></td>
+            <
+          </tr>
+        </tbody>
+      </table>
+      Add Member
+      <form v-on:submit.prevent="addMember()" id="newMemberForm">
+        <div class="member">
+          <input id="memberName" v-model="newMember.firstname" type="text"  placeholder="First Name" class="form-control">
+          <input id="memberLast" v-model="newMember.lastname" type="text"  placeholder="Last Name" class="form-control">
+          <input id="gender" v-model="newMember.gender" type="text"  placeholder="gender" class="form-control">
+          <input id="street" v-model="newMember.addressStreet" type="text"  placeholder="Address: Street" class="form-control">
+          <input id="city" v-model="newMember.addressCity" type="text"  placeholder="Address: City" class="form-control">
+          <input id="state" v-model="newMember.addressState" type="text"  placeholder="State" class="form-control">
+          <input id="zip" v-model="newMember.adressZip" type="text"  placeholder="Zipcode" class="form-control">
+          <input id="radio" v-model="newMember.radioNum" type="text"  placeholder="Radio Number" class="form-control">
+          <input id="station" v-model="newMember.station" type="text"  placeholder="Station Number" class="form-control">
+          <input id="email" v-model="newMember.email" type="text"  placeholder="Email" class="form-control">
+          <input id="phone" v-model="newMember.phone" type="text"  placeholder="Phone Number" class="form-control">
+        </div>
+        <br><center><button type="submit" class="btn btn-primary" id="submitNewMember">Add Member</button></center>
+      </form>
+    </div>
 
 
     <div class="footer">
       This project was completed by Team 31: Matthew Lang, Jiaqi Xiao, Marcus Gershenberg, and Alex Nikas for the Data and Systems Module.<p><p>
       MSIS Program 2020 @ Kelley School of Business at Indiana University
-      <br><br>      <img src="img/OCFR_logo.png"  alt="OCFR Logo" id="logo">
-
     </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src='js/tablesort.min.js'></script>
+    <script src="js/members.app.js"></script>
+    <script>
+      new Tablesort(document.getElementById('bookTable'));
+    </script>
 
     </body>
   </html>
