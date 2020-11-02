@@ -34,7 +34,7 @@
       View, edit, and add OCFR member information.
     </div>
 <br>
-    <div id="getMember">
+<div id="getMember">
       <table id="bookTable" class="table">
         <thead>
           <tr>
@@ -60,7 +60,6 @@
             <td>{{ members.adressZip }}</td>
             <td>{{ members.radioNum }}</td>
             <td><a v-bind:href = "'api/deleteMem.php?firstname=' + members.firstname + '&lastname=' + members.lastname">Delete</a></td>
-            <
           </tr>
         </tbody>
       </table>
@@ -81,7 +80,41 @@
         </div>
         <br><center><button type="submit" class="btn btn-primary" id="submitNewMember">Add Member</button></center>
       </form>
-    </div>
+
+      <form v-on:submit.prevent="findMem()" id="newMem">
+        <div class="dropdown">
+          <select id="members" v-model="selected.fullname" >
+            <option  v-for="members in member"  v-bind:value="members.firstname + ' ' + members.lastname">{{ members.firstname }} {{ members.lastname }}</option>
+          </select>
+        </div>
+        <br><center><button type="submit" class="btn btn-primary" id="submitNewCert">All Members with Ceritifcation</button></center>
+      </form>
+
+      <table id="bookTable" class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Certifications</th>
+            <th>Years Good</th>
+            <th>Date Obtained</th>
+            <th>Date Renewed</th>
+            <th>Date Expire</th>
+          </tr>
+        </thead>
+        <tbody id="certTableBody" class="cert" v-for="i in selectedReturn">
+          <tr>
+            <td>{{ i.fullname }}</td>
+            <td>{{ i.nameShort }}</td>
+            <td>{{ i.stdExpire }}</td>
+            <td>{{ i.dateObtained }}</td>
+            <td>{{ i.dateRenewed}}</td>
+            <td>{{ i.dateExp }}</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+</div>
 
 
     <div class="footer">

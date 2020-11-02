@@ -26,7 +26,23 @@ memberApp = new Vue({
         station:'',
         email:'',
         phone:''
-      }
+      },
+      selected: {
+        fullname:'',
+        nameShort :'',
+        dateObtained:'',
+        dateRenewed:'',
+        dateExp:'',
+        stdExpire:''
+      },
+      selectedReturn: [{
+        fullname:'',
+        stdExpire:'',
+        nameShort :'',
+        dateObtained:'',
+        dateRenewed:'',
+        dateExp:''
+      }]
   },
 
   methods: {
@@ -70,7 +86,36 @@ memberApp = new Vue({
         email:'',
         phone:''
       };
+    },
+    findMem(){
+    fetch('api/viewMemCert.php', {
+      method:'POST',
+      body: JSON.stringify(this.selected),
+      headers : {
+        "Content-Type": "application/json; charset=utf-8"
       }
+    })
+    .then(response => response.json())
+    .then(json => {
+      console.log("Returned from post:", json);
+      this.selectedReturn = json;
+      this.selected = this.newSelectData();
+      console.log("Data in return", this.selectedReturn);
+    });
+    console.log("Creating (POSTing)...!");
+    console.log(this.selected);
+  },
+  newSelectData(){
+    return {
+      fullname:'',
+      stdExpire:'',
+      fullname:'',
+      nameShort :'',
+      dateObtained:'',
+      dateRenewed:'',
+      dateExp:''
+    };
+    }
 
   },
 
