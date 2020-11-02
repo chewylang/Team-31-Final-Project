@@ -33,14 +33,56 @@
       View certification records, details, and members with certain certifications.
     </div>
 
+    <div id="getCert">
+      <table id="bookTable" class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Years Good</th>
+            <th>Delete Record</th>
+          </tr>
+        </thead>
+        <tbody id="certTableBody" class="cert" v-for="certs in cert">
+          <tr>
+            <td>{{ certs.nameShort }}</td>
+            <td>{{ certs.stdExpire }}</td>
+            <td><a v-bind:href = "'api/deleteCert.php?nameShort=' + certs.nameShort">Delete</a></td>
+          </tr>
+        </tbody>
+      </table>
 
+      Add Certification
+        <form v-on:submit.prevent="createCert()" id="newCertForm">
+          <div class="cert">
+            <input id="certTitle" v-model="newCert.nameShort" type="text"  placeholder="Add Certification" class="form-control">
+            <input id="certExpire" v-model="newCert.stdExpire" type="text"  placeholder="Expiration in years" class="form-control">
+          </div>
+          <br><center><button type="submit" class="btn btn-primary" id="submitNewComment">Add Certification</button></center>
+        </form>
+
+
+      <form v-on:submit.prevent="createCert()" id="newCertForm">
+        <div class="dropdown">
+          <select id="certs" name="Certs" >
+            <option  v-for="x in cert" v-bind:value="x.nameShort">{{ x.nameShort }}</option>
+          </select>
+        </div>
+        <br><center><button type="submit" class="btn btn-primary" id="submitNewComment">All Members with Ceritifcation</button></center>
+      </form>
+
+</div>
 
     <div class="footer">
       This project was completed by Team 31: Matthew Lang, Jiaqi Xiao, Marcus Gershenberg, and Alex Nikas for the Data and Systems Module.<p><p>
       MSIS Program 2020 @ Kelley School of Business at Indiana University
-      <br><br>      <img src="img/OCFR_logo.png"  alt="OCFR Logo" id="logo">
-
     </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <script src='js/tablesort.min.js'></script>
+      <script src="js/certifications.app.js"></script>
+      <script>
+        new Tablesort(document.getElementById('bookTable'));
+      </script>
 
     </body>
   </html>
