@@ -50,25 +50,28 @@
           </tr>
         </tbody>
       </table>
-
-      Add Certification
+      <br><br>
+      <center>
+      <h4>Add Certification</h4>
         <form v-on:submit.prevent="createCert()" id="newCertForm">
           <div class="cert">
             <input id="certTitle" v-model="newCert.nameShort" type="text"  placeholder="Add Certification" class="form-control">
-            <input id="certExpire" v-model="newCert.stdExpire" type="text"  placeholder="Expiration in years" class="form-control">
+            <input id="certExpire" v-model="newCert.stdExpire" type="number"  placeholder="Expiration in years" class="form-control">
           </div>
           <br><center><button type="submit" class="btn btn-primary" id="submitNewComment">Add Certification</button></center>
         </form>
 
-
+        <br><br>
+      <h4>Members That Have Held Filtered Certificate</h4>
       <form v-on:submit.prevent="findMem()" id="newMem">
         <div class="dropdown">
           <select id="certs" v-model="selected.nameShort" >
             <option  v-for="x in cert" v-bind:value="x.nameShort">{{ x.nameShort }}</option>
           </select>
         </div>
-        <br><center><button type="submit" class="btn btn-primary" id="submitNewCert">All Members with Ceritifcation</button></center>
-      </form>
+        <br><center><button type="submit" class="btn btn-primary" id="submitNewCert">Filter by Certificate</button></center>
+      </form></center>
+      <br>
 
       <table id="bookTable" class="table">
         <thead>

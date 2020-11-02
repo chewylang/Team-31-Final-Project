@@ -63,7 +63,8 @@
           </tr>
         </tbody>
       </table>
-      Add Member
+      <br><br>
+      <center><h4>Add Member</h4>
       <form v-on:submit.prevent="addMember()" id="newMemberForm">
         <div class="member">
           <input id="memberName" v-model="newMember.firstname" type="text"  placeholder="First Name" class="form-control">
@@ -80,16 +81,17 @@
         </div>
         <br><center><button type="submit" class="btn btn-primary" id="submitNewMember">Add Member</button></center>
       </form>
-
+      <br><br>
+      <h4>See Members Current and Past Certification</h4>
       <form v-on:submit.prevent="findMem()" id="newMem">
         <div class="dropdown">
           <select id="members" v-model="selected.fullname" >
             <option  v-for="members in member"  v-bind:value="members.firstname + ' ' + members.lastname">{{ members.firstname }} {{ members.lastname }}</option>
           </select>
         </div>
-        <br><center><button type="submit" class="btn btn-primary" id="submitNewCert">All Members with Ceritifcation</button></center>
+        <br><center><button type="submit" class="btn btn-primary" id="submitNewCert">View Members Past and Current Certifications</button></center>
       </form>
-
+      <br></center><br>
       <table id="bookTable" class="table">
         <thead>
           <tr>

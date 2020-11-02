@@ -10,7 +10,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'delete from employee where firstname = ? and lastname = ?;'
+  'delete from employee where firstname = ? and lastname = ? ;'
 );
 try{
   $stmt->execute([

@@ -13,9 +13,9 @@ $stmt = $db->prepare(
 );
 try{
   $stmt->execute([
-    $_POST['nameShort'],
-    $_POST['stdExpire'],
-    $_POST['certID']
+    $_GET['nameShort'],
+    $_GET['stdExpire'],
+    $_GET['certID']
   ]);
   echo "Certification Added Successfully";
 }
