@@ -34,13 +34,58 @@
         View a report of all members' names by station and radio number.
     </div>
 
+    <div id="expCert">
+      <table id="bookTable" class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Certification</th>
+            <th>Expired</th>
+          </tr>
+        </thead>
+        <tbody id="certTableBody" class="cert" v-for="certs in cert">
+          <tr>
+            <td>{{ certs.name }}</td>
+            <td>{{ certs.nameShort }}</td>
+            <td>{{ certs.dateExp }}</td>
+          </tr>
+        </tbody>
+      </table>
+<br>
+<table id="bookTable" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Station</th>
+      <th>Radio Number</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+    </tr>
+  </thead>
+  <tbody id="memberTableBody" class="members" v-for="mems in members">
+    <tr>
+      <td>{{ mems.fullname }}</td>
+      <td>{{ mems.station }}</td>
+      <td>{{ mems.radioNum }}</td>
+      <td>{{ mems.email }}</td>
+      <td>{{ mems.phone }}</td>
+    </tr>
+  </tbody>
+</table>
 
+
+    </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src='js/tablesort.min.js'></script>
+        <script src="js/reports.app.js"></script>
+        <script>
+          new Tablesort(document.getElementById('bookTable'));
+        </script>
 
     <div class="footer">
       This project was completed by Team 31: Matthew Lang, Jiaqi Xiao, Marcus Gershenberg, and Alex Nikas for the Data and Systems Module.<p><p>
       MSIS Program 2020 @ Kelley School of Business at Indiana University
-      <br><br>      <img src="img/OCFR_logo.png"  alt="OCFR Logo" id="logo">
-
     </div>
 
     </body>

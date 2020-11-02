@@ -6,10 +6,8 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = "select concat(e.firstname, ' ', e.lastname) as fullname, s.stationNum, e.radioNum, m.email
-from station as s, employee as e, employeeStation as es, empEmail as m
-where m.empID = e.empID and e.empID = es.empID and s.stationNum = es.stationNum and m.type = 'work'
-group by fullname";
+$sql = "select concat(e.firstname, ' ', e.lastname) as fullname, e.station, e.radioNum, e.email, e.phone
+from employee as e";
 
 $vars = [];
 
