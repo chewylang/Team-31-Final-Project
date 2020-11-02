@@ -6,7 +6,7 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = "select c.nameShort, c.stdExpire, concat(e.firstname, ' ', e.lastname) as fullname, ce.dateObtained, ce.dateExp
+$sql = "select c.nameShort, c.stdExpire, concat(e.firstname, ' ', e.lastname) as fullname, ce.dateObtained, ce.dateRenewed, ce.dateExp
 from certification as c, employee as e, certEmpDetails as ce
 where ce.certID = c.certID and e.empID = ce.empID and c.nameShort = ?";
 
@@ -14,7 +14,7 @@ where ce.certID = c.certID and e.empID = ce.empID and c.nameShort = ?";
 
 $stmt = $db->prepare($sql);
 $stmt->execute([
-  $_GET['nameShort']
+  $_POST['nameShort']
 ]);
 
 $members = $stmt->fetchAll();

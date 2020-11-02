@@ -6,16 +6,15 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = "select c.nameShort, c.stdExpire, ce.dateObtained, ce.dateExp
+$sql = "select concat(e.firstname, ' ',e.lastName) as fullname, c.nameShort, c.stdExpire, ce.dateObtained, ce.dateRenewed, ce.dateExp
 from certification as c, employee as e, certEmpDetails as ce
-where ce.certID = c.certID and e.empID = ce.empID and e.firstname = ? and e.lastName = ?";
+where ce.certID = c.certID and e.empID = ce.empID and concat(e.firstname, ' ',e.lastName) = ?";
 
 
 
 $stmt = $db->prepare($sql);
 $stmt->execute([
-  $_GET['firstname'],
-  $_GET['lastName']
+  $_POST['fullname']
 ]);
 
 $members = $stmt->fetchAll();

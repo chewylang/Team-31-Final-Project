@@ -9,9 +9,20 @@ memberApp = new Vue({
         nameShort:'',
         stdExpire:''
       },
-      deleteCert:{
-        nameShort:''
-      }
+      selected: {
+        fullname:'',
+        nameShort :'',
+        dateObtained:'',
+        dateRenewed:'',
+        dateExp:''
+      },
+      selectedReturn: [{
+        fullname:'',
+        nameShort :'',
+        dateObtained:'',
+        dateRenewed:'',
+        dateExp:''
+      }]
   },
 
   methods: {
@@ -44,10 +55,36 @@ newCertData(){
   return {
     nameShort:'',
     stdExpire:''
-    }
-  }
+  };
   },
-
+  findMem(){
+  fetch('api/viewCertDetails.php', {
+    method:'POST',
+    body: JSON.stringify(this.selected),
+    headers : {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  })
+  .then(response => response.json())
+  .then(json => {
+    console.log("Returned from post:", json);
+    this.selectedReturn = json;
+    this.selected = this.newSelectData();
+    console.log("Data in return", this.selectedReturn);
+  });
+  console.log("Creating (POSTing)...!");
+  console.log(this.selected);
+},
+newSelectData(){
+  return {
+    fullname:'',
+    nameShort :'',
+    dateObtained:'',
+    dateRenewed:'',
+    dateExp:''
+  };
+  }
+},
 
   created(){
     this.fetchCert();

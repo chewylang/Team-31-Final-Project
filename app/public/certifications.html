@@ -61,14 +61,36 @@
         </form>
 
 
-      <form v-on:submit.prevent="createCert()" id="newCertForm">
+      <form v-on:submit.prevent="findMem()" id="newMem">
         <div class="dropdown">
-          <select id="certs" name="Certs" >
+          <select id="certs" v-model="selected.nameShort" >
             <option  v-for="x in cert" v-bind:value="x.nameShort">{{ x.nameShort }}</option>
           </select>
         </div>
-        <br><center><button type="submit" class="btn btn-primary" id="submitNewComment">All Members with Ceritifcation</button></center>
+        <br><center><button type="submit" class="btn btn-primary" id="submitNewCert">All Members with Ceritifcation</button></center>
       </form>
+
+      <table id="bookTable" class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Date Obtained</th>
+            <th>Date Renewed</th>
+            <th>Date Expire</th>
+          </tr>
+        </thead>
+        <tbody id="certTableBody" class="cert" v-for="i in selectedReturn">
+          <tr>
+            <td>{{ i.fullname }}</td>
+            <td>{{ i.nameShort }}</td>
+            <td>{{ i.dateObtained }}</td>
+            <td>{{ i.dateRenewed}}</td>
+            <td>{{ i.dateExp }}</td>
+
+          </tr>
+        </tbody>
+      </table>
 
 </div>
 
