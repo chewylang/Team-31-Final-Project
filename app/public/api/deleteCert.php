@@ -18,7 +18,7 @@ try{
   ]);
   echo "Certification Successfully Deleted";
   echo"<br>";
-  echo "<a href=\home.html>Home</a>";
+  echo "<a href=\index.html>Home</a>";
 }
 catch (Exception $e){
   echo "Something went wrong: ", $e->getMessage();

@@ -52,19 +52,24 @@
       </table>
       <br><br>
       <center>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
       <h4>Add Certification</h4>
         <form v-on:submit.prevent="createCert()" id="newCertForm">
           <div class="cert">
+            <label>Certification Title</label>
             <input id="certTitle" v-model="newCert.nameShort" type="text"  placeholder="Add Certification" class="form-control">
+            <br><label>Standard Expiration (Years)</label>
             <input id="certExpire" v-model="newCert.stdExpire" type="number"  placeholder="Expiration in years" class="form-control">
           </div>
           <br><center><button type="submit" class="btn btn-primary" id="submitNewComment">Add Certification</button></center>
         </form>
-
-        <br><br>
-      <h4>Members That Have Held Filtered Certificate</h4>
+</div></div>
+        <br><br><br>
+      <h4>Members That Have Held Specified Certification</h4><br>
       <form v-on:submit.prevent="findMem()" id="newMem">
         <div class="dropdown">
+          <label>Select a Certification</label><br>
           <select id="certs" v-model="selected.nameShort" >
             <option  v-for="x in cert" v-bind:value="x.nameShort">{{ x.nameShort }}</option>
           </select>

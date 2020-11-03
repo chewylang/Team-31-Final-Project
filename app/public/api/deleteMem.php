@@ -19,7 +19,7 @@ try{
   ]);
   echo "Member Successfully Deleted";
   echo"<br>";
-  echo "\n<a href=\home.html>Home</a>";
+  echo "\n<a href=\index.html>Home</a>";
 }
 catch (Exception $e){
   echo "Something went wrong: ", $e->getMessage();

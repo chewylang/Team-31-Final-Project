@@ -31,8 +31,9 @@
       <b>Members</b>
       </div>
       <div class="header-text">
-      View, edit, and add OCFR member information.
+      View, delete, and add OCFR member information.
     </div>
+
 <br>
 <div id="getMember">
       <table id="bookTable" class="table">
@@ -64,27 +65,49 @@
         </tbody>
       </table>
       <br><br>
+
       <center><h4>Add Member</h4>
+
+        <div class="card" style="width: 30rem;">
+          <div class="card-body">
       <form v-on:submit.prevent="addMember()" id="newMemberForm">
         <div class="member">
+        <br><label>First Name</label>
           <input id="memberName" v-model="newMember.firstname" type="text"  placeholder="First Name" class="form-control">
+          <br><label>Last Name</label>
           <input id="memberLast" v-model="newMember.lastname" type="text"  placeholder="Last Name" class="form-control">
-          <input id="gender" v-model="newMember.gender" type="text"  placeholder="gender" class="form-control">
+        <br><label>Gender</label>
+          <select id="gender" v-model="newMember.gender" type="radio"  placeholder="gender" class="form-control">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <br><label>Street Address</label>
           <input id="street" v-model="newMember.addressStreet" type="text"  placeholder="Address: Street" class="form-control">
+          <br><label>City</label>
           <input id="city" v-model="newMember.addressCity" type="text"  placeholder="Address: City" class="form-control">
+          <br><label>State</label>
           <input id="state" v-model="newMember.addressState" type="text"  placeholder="State" class="form-control">
+          <br><label>Zipcode</label>
           <input id="zip" v-model="newMember.adressZip" type="text"  placeholder="Zipcode" class="form-control">
+          <br><label>Radio</label>
           <input id="radio" v-model="newMember.radioNum" type="text"  placeholder="Radio Number" class="form-control">
+          <br><label>Station</label>
           <input id="station" v-model="newMember.station" type="number"  placeholder="Station Number" class="form-control">
+          <br><label>Email</label>
           <input id="email" v-model="newMember.email" type="text"  placeholder="Email" class="form-control">
+          <br><label>Phone Number</label>
           <input id="phone" v-model="newMember.phone" type="text"  placeholder="Phone Number" class="form-control">
         </div>
         <br><center><button type="submit" class="btn btn-primary" id="submitNewMember">Add Member</button></center>
       </form>
+    </div>
+</div>
       <br><br>
-      <h4>See Members Current and Past Certification</h4>
+      <h4>See Members Current and Past Certification</h4><br>
       <form v-on:submit.prevent="findMem()" id="newMem">
         <div class="dropdown">
+          <label>Select a Member</label><br>
           <select id="members" v-model="selected.fullname" >
             <option  v-for="members in member"  v-bind:value="members.firstname + ' ' + members.lastname">{{ members.firstname }} {{ members.lastname }}</option>
           </select>
